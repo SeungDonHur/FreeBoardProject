@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board">
+    <insert id="insertBoard">
+        insert into freeboard (title, author, content, image)
+        values (#{title},#{author},#{content},#{image})
+    </insert>
+    <update id="updateBoard">
+        update freeboard set title=#{title}, content=#{content}, author=#{author0}, fixdate=current_timestamp where pid=#{pid}
+    </update>
+    <delete id = "deleteBoard">
+        delete from freeboard where pid=#{pid}
+    </delete>
+    <select id="getBoard" resultType="board">
+        select * from freeboard where pid=#{pid}
+    </select>
+    <select id="getBoardList" resultType="board">
+        select * from freeboard order by pid desc
+    </select>
+</mapper>
