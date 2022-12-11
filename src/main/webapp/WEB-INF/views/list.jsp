@@ -39,7 +39,6 @@
         alert("로그아웃되었습니다.");
     }
 </script>
-<body>
 <h1>자유게시판</h1>
 <p><a href="../login/logout" onclick="do_function()">logout</a></p>
 <table id="list" width="90%">
