@@ -52,7 +52,7 @@
     <c:forEach items="${list}" var="u">
         <tr>
             <td>${u.pid}</td>
-            <td>${u.title}</td>
+            <td><a href="detail/${u.pid}">${u.title}</a></td>
             <td>${u.author}</td>
             <td>${u.date}</td>
             <td>${u.fixdate}</td>
