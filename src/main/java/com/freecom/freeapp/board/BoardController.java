@@ -36,11 +36,11 @@ public class BoardController {
         return "editform";
     }
 
-    @RequestMapping(value="board/editok",method = RequestMethod.POST)
+    @RequestMapping(value="board/detail/editok",method = RequestMethod.POST)
     public String editPostOK(BoardVO vo){
         if(boardService.updateBoard(vo)==0) System.out.println("데이터 수정 실패!");
         else System.out.println("데이터 수정 성공!!!");
-        return "redirect:detail";
+        return "redirect:../list";
     }
 
     @RequestMapping(value="board/detail/{id}",method=RequestMethod.GET)

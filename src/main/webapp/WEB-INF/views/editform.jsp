@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-	<title>Title</title>
+	<title>Edit Post</title>
 </head>
 <body>
 <h1>Edit Post</h1>
@@ -20,7 +20,7 @@
 		<tr><td><form:input path="author" /></td></tr>
 		<tr><td><form:textarea cols="50" rows="5" path="content" /></td></tr>
 	</table>
-	<input type="submit" value="수정하기"/>
+	<input type="submit" value="수정하기" />
 	<input type="button" value="취소하기" onclick="history.back()"/>
 </form:form>
 </body>

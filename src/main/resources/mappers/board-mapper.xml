@@ -6,7 +6,7 @@
         values (#{title},#{author},#{content},#{image})
     </insert>
     <update id="updateBoard">
-        update freeboard set title=#{title}, content=#{content}, author=#{author0}, fixdate=current_timestamp where pid=#{pid}
+        update freeboard set title=#{title}, content=#{content}, author=#{author}, fixdate=current_timestamp where pid=#{pid}
     </update>
     <delete id = "deleteBoard">
         delete from freeboard where pid=#{pid}
