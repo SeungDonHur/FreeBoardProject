@@ -19,6 +19,7 @@
 </head>
 <body>
 <h1><c:out value="${detail.title}"/></h1>
+<img src="../../img/${detail.image}">
 <p><c:out value="${detail.content}"/></p>
 <p>
     작성일: <c:out value="${detail.date}"/><br>
