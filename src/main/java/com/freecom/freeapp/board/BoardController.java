@@ -29,7 +29,7 @@ public class BoardController {
         return "redirect:list";
     }
 
-    @RequestMapping(value="board/editform/{id}",method=RequestMethod.GET)
+    @RequestMapping(value="board/detail/editform/{id}",method=RequestMethod.GET)
     public String editPost(@PathVariable("id") int id, Model model){
         BoardVO boardVO=boardService.getBoard(id);
         model.addAttribute("u",boardVO);
