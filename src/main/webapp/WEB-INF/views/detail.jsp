@@ -10,6 +10,12 @@
 <html>
 <head>
     <title>${detail.title}</title>
+    <script>
+        function delete_ok(id){
+            var a = confirm("정말로 삭제하겠습니까?");
+            if(a) location.href='deleteok/'+id;
+        }
+    </script>
 </head>
 <body>
 <h1><c:out value="${detail.title}"/></h1>
