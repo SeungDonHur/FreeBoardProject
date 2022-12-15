@@ -19,9 +19,35 @@ public class BoardController {
         return "list";
     }
 
+    @RequestMapping(value="/board/add", method = RequestMethod.GET)
+    public String addPost() {return "addpostform";}
+
+    @RequestMapping(value="/board/addok",method= RequestMethod.POST)
+    public String addPostOK(BoardVO vo){
+        if(boardService.insertBoard(vo) == 0) System.out.println("데이터 추가 실패");
+        else System.out.println("데이터 추가 성공!!!");
+        return "redirect:list";
+    }
+
+    @RequestMapping(value="board/editform/{id}",method=RequestMethod.GET)
+    public String editPost(@PathVariable("id") int id, Model model){
+        BoardVO boardVO=boardService.getBoard(id);
+        model.addAttribute("u",boardVO);
+        return "editform";
+    }
+
+    @RequestMapping(value="board/editok",method = RequestMethod.POST)
+    public String editPostOK(BoardVO vo){
+        if(boardService.updateBoard(vo)==0) System.out.println("데이터 수정 실패!");
+        else System.out.println("데이터 수정 성공!!!");
+        return "redirect:detail";
+    }
+
     @RequestMapping(value="board/detail/{id}",method=RequestMethod.GET)
     public String contentDetail(Model model,@PathVariable("id") int id){
         model.addAttribute("detail",boardService.getBoard(id));
         return "detail";
     }
+
+
 }
